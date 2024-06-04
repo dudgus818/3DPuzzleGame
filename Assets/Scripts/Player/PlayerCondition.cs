@@ -1,5 +1,6 @@
 using UnityEngine;
 using System;
+using System.Collections;
 
 public class PlayerCondition : MonoBehaviour
 {
@@ -9,11 +10,8 @@ public class PlayerCondition : MonoBehaviour
     private PlayerController playerController;
 
     [Header ("Sprint")]
-    public float staminaDrainRate = 10f;  // 매초마다 감소할 스태미나 양
-    public float staminaRegenRate = 5f;
-    public float staminaRegenDelay = 5f;
-    private float staminaRegenTimer;
-    private float staminaDrainTimer; // 매초 스태미나 감소를 위한 타이머
+    public float recoveryDelay = 5.0f; // 스태미나 회복 지연 시간 (초)
+    private bool isRecovering = false;
 
     Condition sprintStamina { get { return uiCondition.sprintStamina; }}
 
@@ -26,10 +24,6 @@ public class PlayerCondition : MonoBehaviour
     void Update()
     {
         HandleStamina();
-        if(!playerController.isSprinting)
-        {
-            AddSprintStamina();
-        }
     }
 
     public void HandleStamina()
@@ -42,13 +36,27 @@ public class PlayerCondition : MonoBehaviour
             {
                 sprintStamina.curValue = 0;
                 playerController.isSprinting = false;  // 스태미나가 바닥나면 스프린트 중지
+                isRecovering = true;
+                StartCoroutine(RecoverStaminaAfterDelay());
             }
         }
+        else if(!isRecovering)
+        {
+            AddSprintStamina();
+        }
+    }
+    private IEnumerator RecoverStaminaAfterDelay()
+    {
+        yield return new WaitForSeconds(recoveryDelay);
+        isRecovering = false;
     }
 
     public void AddSprintStamina()
     {
-        sprintStamina.Add(sprintStamina.addValue * Time.deltaTime);
+        if (!playerController.isSprinting)
+        {
+            sprintStamina.Add(sprintStamina.addValue * Time.deltaTime);
+        }
     }
 
     public void SubtractSprintStamina()
