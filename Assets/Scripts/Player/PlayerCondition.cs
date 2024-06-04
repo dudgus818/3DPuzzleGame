@@ -45,6 +45,7 @@ public class PlayerCondition : MonoBehaviour
             AddSprintStamina();
         }
     }
+
     private IEnumerator RecoverStaminaAfterDelay()
     {
         yield return new WaitForSeconds(recoveryDelay);
