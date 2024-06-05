@@ -100,9 +100,9 @@ public class PlayerController : MonoBehaviour
 
     public void ToggleCursor(bool state)
     {
-            Cursor.lockState = state ? CursorLockMode.None : CursorLockMode.Locked;
-            Cursor.visible = state;
-            canLook = !state;
+        Cursor.lockState = state ? CursorLockMode.None : CursorLockMode.Locked;
+        Cursor.visible = state;
+        canLook = !state;
     }
 
 

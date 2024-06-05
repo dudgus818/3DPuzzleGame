@@ -6,6 +6,7 @@ public class DoorLock : MonoBehaviour
     public TMP_Text resultText;  // 결과를 표시할 텍스트 필드
     private string input = "";  // 사용자 입력을 저장할 문자열
     private string correctPassword = "1234"; // 설정된 테스트 비밀번호
+    public DoorController doorController;
 
     private PlayerController controller;
 
@@ -32,6 +33,7 @@ public class DoorLock : MonoBehaviour
         if (input == correctPassword)
         {
             resultText.text = "Access";
+            doorController.OpenDoor();
         }
         else
         {
