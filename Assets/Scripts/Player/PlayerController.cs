@@ -24,6 +24,9 @@ public class PlayerController : MonoBehaviour
     public Action inventory;
     private Rigidbody _rigidbody;
 
+    private InteractableObject currentInteractable;
+
+
     private void Awake()
     {
         _rigidbody = GetComponent<Rigidbody>();
@@ -44,6 +47,7 @@ public class PlayerController : MonoBehaviour
         {
             CameraLook();
         }
+
     }
     void Move()
     {
@@ -98,5 +102,29 @@ public class PlayerController : MonoBehaviour
         bool toggle = Cursor.lockState == CursorLockMode.Locked;
         Cursor.lockState = toggle ? CursorLockMode.None : CursorLockMode.Locked;
         canLook = !toggle;
+    }
+
+    public void OnInteract(InputAction.CallbackContext context)
+    {
+        if (context.phase == InputActionPhase.Performed && currentInteractable != null)
+        {
+            currentInteractable.Interact();
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("InteractableObject"))
+        {
+            currentInteractable = other.GetComponent<InteractableObject>();
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("InteractableObject"))
+        {
+            currentInteractable = null;
+        }
     }
 }
