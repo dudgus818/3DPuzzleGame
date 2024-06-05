@@ -1,24 +1,33 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class InteractableObject : MonoBehaviour
 {
     public GameObject interactionUI;
+    public PlayerController playerController;
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player"))
-        {
-            interactionUI.SetActive(true);
-        }
+        SetInteractionUIState(other, true);
     }
 
     private void OnTriggerExit(Collider other)
     {
+        SetInteractionUIState(other, false);
+    }
+
+    private void SetInteractionUIState(Collider other, bool state)
+    {
         if (other.CompareTag("Player"))
         {
-            interactionUI.SetActive(false);
+            if (playerController != null)
+            {
+                playerController.ToggleCursor(state);
+            }
+
+            if (interactionUI != null)
+            {
+                interactionUI.SetActive(state);
+            }
         }
     }
 

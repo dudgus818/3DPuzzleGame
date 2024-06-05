@@ -21,10 +21,11 @@ public class PlayerController : MonoBehaviour
     private Vector2 mouseDelta;
     public bool canLook = true;
 
+    [Header("InteractableObject")]
+    public InteractableObject currentInteractable;
+
     public Action inventory;
     private Rigidbody _rigidbody;
-
-    private InteractableObject currentInteractable;
 
 
     private void Awake()
@@ -96,13 +97,14 @@ public class PlayerController : MonoBehaviour
     {
         mouseDelta = context.ReadValue<Vector2>();
     }
-    
-    void ToggleCursor()
+
+    public void ToggleCursor(bool state)
     {
-        bool toggle = Cursor.lockState == CursorLockMode.Locked;
-        Cursor.lockState = toggle ? CursorLockMode.None : CursorLockMode.Locked;
-        canLook = !toggle;
+        Cursor.lockState = state ? CursorLockMode.None : CursorLockMode.Locked;
+        Cursor.visible = state;
+        canLook = !state;
     }
+
 
     public void OnInteract(InputAction.CallbackContext context)
     {

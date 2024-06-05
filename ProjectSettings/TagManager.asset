@@ -12,13 +12,8 @@ TagManager:
   - 
   - Water
   - UI
-<<<<<<< Updated upstream
-  - 
-  - 
-=======
   - Player
-  - InteractableObject
->>>>>>> Stashed changes
+  - Wall
   - 
   - 
   - 
