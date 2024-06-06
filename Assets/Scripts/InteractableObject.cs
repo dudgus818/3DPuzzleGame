@@ -3,6 +3,7 @@ using UnityEngine;
 public class InteractableObject : MonoBehaviour
 {
     public GameObject interactionUI;
+    public GameObject playerUI;
     public PlayerController playerController;
 
     private bool isLocked = false; // 상호작용 잠금 상태를 나타내는 플래그
@@ -12,6 +13,7 @@ public class InteractableObject : MonoBehaviour
         if (!isLocked)
         {
             SetInteractionUIState(other, true);
+            playerUI.SetActive(false);
         }
     }
 
@@ -20,6 +22,7 @@ public class InteractableObject : MonoBehaviour
         if (!isLocked)
         {
             SetInteractionUIState(other, false);
+            playerUI.SetActive(true);
         }
     }
 
