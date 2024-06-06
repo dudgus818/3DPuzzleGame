@@ -420,6 +420,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Puzzle_DoorLock
       objectReference: {fileID: 0}
+    - target: {fileID: 4941027296247699546, guid: a4fcb22820685cd4fa7c43727458f64e,
+        type: 3}
+      propertyPath: doorController
+      value: 
+      objectReference: {fileID: 2115783557}
+    - target: {fileID: 4941027296247699546, guid: a4fcb22820685cd4fa7c43727458f64e,
+        type: 3}
+      propertyPath: interactableObject
+      value: 
+      objectReference: {fileID: 2115783555}
     - target: {fileID: 5202432034336722399, guid: a4fcb22820685cd4fa7c43727458f64e,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -807,6 +817,28 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactionUI: {fileID: 311862310}
   playerController: {fileID: 964855795}
+--- !u!4 &2115783556 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4077535731057415035, guid: 4c394abbf2e198b42950c3c04a6a2638,
+    type: 3}
+  m_PrefabInstance: {fileID: 4078120347645989993}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2115783557
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2115783553}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fed987e6f464be843814d3b614a6c933, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  doorTransform: {fileID: 2115783556}
+  openAngle: -90
+  doorSpeed: 1.1
+  isOpen: 0
 --- !u!1001 &50681033125807250
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1053,6 +1085,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 2115783555}
+    - targetCorrespondingSourceObject: {fileID: 4079110453213583389, guid: 4c394abbf2e198b42950c3c04a6a2638,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2115783557}
     - targetCorrespondingSourceObject: {fileID: 4079791492396539385, guid: 4c394abbf2e198b42950c3c04a6a2638,
         type: 3}
       insertIndex: -1

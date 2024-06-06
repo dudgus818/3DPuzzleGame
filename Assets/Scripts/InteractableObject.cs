@@ -5,14 +5,22 @@ public class InteractableObject : MonoBehaviour
     public GameObject interactionUI;
     public PlayerController playerController;
 
+    private bool isLocked = false; // 상호작용 잠금 상태를 나타내는 플래그
+
     private void OnTriggerEnter(Collider other)
     {
-        SetInteractionUIState(other, true);
+        if (!isLocked)
+        {
+            SetInteractionUIState(other, true);
+        }
     }
 
     private void OnTriggerExit(Collider other)
     {
-        SetInteractionUIState(other, false);
+        if (!isLocked)
+        {
+            SetInteractionUIState(other, false);
+        }
     }
 
     private void SetInteractionUIState(Collider other, bool state)
@@ -36,5 +44,17 @@ public class InteractableObject : MonoBehaviour
         // 상호작용 코드 구현
         Debug.Log("상호작용된 오브젝트: " + gameObject.name);
         interactionUI.SetActive(false);
+    }
+
+    public void SetLocked(bool locked)
+    {
+        isLocked = locked;
+
+        // 잠금 상태로 설정되면 상호작용 UI를 비활성화
+        if (locked && interactionUI != null)
+        {
+            interactionUI.SetActive(false);
+            playerController.ToggleCursor(false);
+        }
     }
 }
