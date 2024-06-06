@@ -2,10 +2,33 @@ using UnityEngine;
 
 public class DoorController : MonoBehaviour
 {
-    public Animator doorAnimator; // 문의 애니메이터
-    // 문을 여는 메서드
-    public void OpenDoor()
+    public Transform doorTransform;
+    public float openAngle = 90f;
+    public float doorSpeed = 2f;
+    public bool isOpen = false;
+    private Quaternion closedRotation;
+    private Quaternion openRotation;
+
+    void Start()
     {
-       doorAnimator.SetTrigger("Open");
+        closedRotation = doorTransform.rotation;
+        openRotation = Quaternion.Euler(doorTransform.eulerAngles + new Vector3(0, openAngle, 0));
+    }
+
+    void Update()
+    {
+        if (isOpen)
+        {
+            doorTransform.rotation = Quaternion.Slerp(doorTransform.rotation, openRotation, Time.deltaTime * doorSpeed);
+        }
+        else
+        {
+            doorTransform.rotation = Quaternion.Slerp(doorTransform.rotation, closedRotation, Time.deltaTime * doorSpeed);
+        }
+    }
+
+    public void ToggleDoor()
+    {
+        isOpen = !isOpen;
     }
 }

@@ -9,20 +9,13 @@ public class AudioManager : MonoBehaviour
     public AudioSource backgroundMusicSource;
     public AudioSource soundEffectSource;
     public AudioSource musicBoxSource;
-    public AudioSource mapLampSource;
-    public AudioSource LampSource;
 
     public AudioClip backgroundMusicClip;
     public AudioClip runMusicClip;
     public AudioClip clickSound;
     public AudioClip setSound;
-    public AudioClip mapLampSound;
-    public AudioClip lampSound;
     public AudioClip openInventorySound;
     public AudioClip musicboxSound;
-    public AudioClip doorOpenSound;
-    public AudioClip SecretdoorOpenSound;
-    public AudioClip useKeySound;
 
     private void Awake()
     {
@@ -36,6 +29,16 @@ public class AudioManager : MonoBehaviour
             Destroy(gameObject);
         }
     }
+
+    void Start()
+    {
+        if (backgroundMusicSource != null)
+        {
+            backgroundMusicSource.clip = backgroundMusicClip;
+            backgroundMusicSource.Play();
+        }
+    }
+
     public void PlayClickSound()
     {
         if (clickSound != null)
@@ -49,6 +52,14 @@ public class AudioManager : MonoBehaviour
         if (clickSound != null)
         {
             soundEffectSource.clip = openInventorySound;
+            soundEffectSource.Play();
+        }
+    }
+    public void setItemSound()
+    {
+        if (clickSound != null)
+        {
+            soundEffectSource.clip = setSound;
             soundEffectSource.Play();
         }
     }
