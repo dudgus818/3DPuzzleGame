@@ -16,6 +16,6 @@ public class GameManager : MonoBehaviour
     {
         playerController = FindObjectOfType<PlayerController>();
         playerController.ToggleCursor(false);
-        Time.timeScale = 0f;
+        Time.timeScale = 1f;
     }
 }
