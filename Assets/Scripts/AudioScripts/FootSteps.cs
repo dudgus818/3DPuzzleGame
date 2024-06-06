@@ -1,26 +1,21 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class FootSteps : MonoBehaviour
 {
-
-    private Rigidbody _rigidbody;
     public AudioClip[] footstepClips;
+    private AudioSource audioSource;
+    private Rigidbody _rigidbody;
     public float footstepThreshold;
     public float footstepRate;
     private float footStepTime;
-    public AudioSource footstepSource;
 
-    // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
         _rigidbody = GetComponent<Rigidbody>();
-        footstepSource = GetComponent<AudioSource>();
+        audioSource = GetComponent<AudioSource>();
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
         if (Mathf.Abs(_rigidbody.velocity.y) < 0.1f)
         {
@@ -29,7 +24,7 @@ public class FootSteps : MonoBehaviour
                 if (Time.time - footStepTime > footstepRate)
                 {
                     footStepTime = Time.time;
-                    footstepSource.PlayOneShot(footstepClips[Random.Range(0, footstepClips.Length)]);
+                    audioSource.PlayOneShot(footstepClips[Random.Range(0, footstepClips.Length)]);
                 }
             }
         }
