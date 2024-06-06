@@ -13,7 +13,6 @@ public class InteractableObject : MonoBehaviour
         if (!isLocked)
         {
             SetInteractionUIState(other, true);
-            playerUI.SetActive(false);
         }
     }
 
@@ -22,7 +21,6 @@ public class InteractableObject : MonoBehaviour
         if (!isLocked)
         {
             SetInteractionUIState(other, false);
-            playerUI.SetActive(true);
         }
     }
 
