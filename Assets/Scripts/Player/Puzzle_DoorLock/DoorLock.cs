@@ -1,5 +1,6 @@
 using UnityEngine;
 using TMPro;
+using Unity.VisualScripting;
 
 public class DoorLock : MonoBehaviour
 {
@@ -9,7 +10,12 @@ public class DoorLock : MonoBehaviour
     public DoorController doorController;
     public InteractableObject interactableObject;
 
-    private PlayerController controller;
+    private PlayerController playerController;
+
+    private void Start()
+    {
+        playerController = CharacterManager.Instance.Player.GetComponent<PlayerController>();
+    }
 
     // 숫자 버튼이 클릭될 때 호출되는 메서드
     public void OnNumberButtonClick(string number)
@@ -36,6 +42,7 @@ public class DoorLock : MonoBehaviour
             resultText.text = "Access";
             doorController.isOpen = true;
             interactableObject.SetLocked(true);
+            playerController.ToggleCursor();
         }
         else
         {

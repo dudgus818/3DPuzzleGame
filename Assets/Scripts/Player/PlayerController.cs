@@ -98,35 +98,20 @@ public class PlayerController : MonoBehaviour
         mouseDelta = context.ReadValue<Vector2>();
     }
 
-    public void ToggleCursor(bool state)
+    public void ToggleCursor()
     {
+        bool state = Cursor.lockState == CursorLockMode.Locked;
         Cursor.lockState = state ? CursorLockMode.None : CursorLockMode.Locked;
         Cursor.visible = state;
         canLook = !state;
     }
 
-
-    public void OnInteract(InputAction.CallbackContext context)
-    {
-        if (context.phase == InputActionPhase.Performed && currentInteractable != null)
-        {
-            currentInteractable.Interact();
-        }
-    }
-
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.CompareTag("InteractableObject"))
-        {
-            currentInteractable = other.GetComponent<InteractableObject>();
-        }
-    }
-
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.CompareTag("InteractableObject"))
-        {
-            currentInteractable = null;
-        }
-    }
+    //public void OnInteract(InputAction.CallbackContext context)
+    //{
+    //    if (context.phase == InputActionPhase.Performed && currentInteractable != null)
+    //    {
+    //        currentInteractable.Interact();
+    //        ToggleCursor();
+    //    }
+    //}
 }

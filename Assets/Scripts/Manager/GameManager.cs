@@ -20,7 +20,7 @@ public class GameManager : MonoBehaviour
     void GameStart()
     {
         playerController = FindObjectOfType<PlayerController>();
-        playerController.ToggleCursor(true);
+        playerController.ToggleCursor();
         Time.timeScale = 0f;
     }
 }
