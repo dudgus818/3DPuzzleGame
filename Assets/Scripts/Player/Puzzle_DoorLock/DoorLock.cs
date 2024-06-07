@@ -9,7 +9,17 @@ public class DoorLock : MonoBehaviour
     public DoorController doorController;
     public InteractableObject interactableObject;
 
+<<<<<<< Updated upstream
     private PlayerController controller;
+=======
+    private PlayerController playerController;
+
+    private void Start()
+    {
+        playerController = CharacterManager.Instance.Player.GetComponent<PlayerController>();
+
+    }
+>>>>>>> Stashed changes
 
     // 숫자 버튼이 클릭될 때 호출되는 메서드
     public void OnNumberButtonClick(string number)
@@ -19,6 +29,11 @@ public class DoorLock : MonoBehaviour
             input += number;
             resultText.text = input;
         }
+        AudioManager audioManager = FindAnyObjectByType<AudioManager>();
+        if (audioManager != null)
+        {
+            audioManager.ButtonSound();
+        }
     }
 
     // 'C' 버튼이 클릭될 때 호출되는 메서드 (초기화)
@@ -26,7 +41,13 @@ public class DoorLock : MonoBehaviour
     {
         input = "";
         resultText.text = "0";
+        AudioManager audioManager = FindAnyObjectByType<AudioManager>();
+        if (audioManager != null)
+        {
+            audioManager.ButtonSound();
+        }
     }
+
 
     // 비밀번호 확인 메서드
     public void OnCheckPassword()
@@ -36,11 +57,25 @@ public class DoorLock : MonoBehaviour
             resultText.text = "Access";
             doorController.isOpen = true;
             interactableObject.SetLocked(true);
+<<<<<<< Updated upstream
+=======
+            playerController.ToggleCursor();
+            AudioManager audioManager = FindAnyObjectByType<AudioManager>();
+            if (audioManager != null)
+            {
+                audioManager.OkSound();
+            }
+>>>>>>> Stashed changes
         }
         else
         {
             resultText.text = "ERROR";
             input = ""; // 입력 초기화
+            AudioManager audioManager = FindAnyObjectByType<AudioManager>();
+            if (audioManager != null)
+            {
+                audioManager.ErrorSound();
+            }
         }
     }
 }

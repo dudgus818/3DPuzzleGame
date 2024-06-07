@@ -30,19 +30,19 @@ public class IsComing : MonoBehaviour
         }
         else if (elapsedTime < 90f)
         {
-            iscomingRate = 50f;
+            iscomingRate = 55f;
         }
         else if (elapsedTime < 100f)
         {
-            iscomingRate = 30f;
+            iscomingRate = 50f;
         }
         else if (elapsedTime < 105f)
         {
-            iscomingRate = 20f;
+            iscomingRate = 45f;
         }
         else if (elapsedTime < 106f)
         {
-            iscomingRate = 10f;
+            iscomingRate = 30f;
         }
         else if (elapsedTime < 1200f)
         {
