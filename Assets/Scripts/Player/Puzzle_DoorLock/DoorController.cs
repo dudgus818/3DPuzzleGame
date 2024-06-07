@@ -8,11 +8,17 @@ public class DoorController : MonoBehaviour
     public bool isOpen = false;
     private Quaternion closedRotation;
     private Quaternion openRotation;
+    public GameObject doorObject;
 
     void Start()
     {
         closedRotation = doorTransform.rotation;
         openRotation = Quaternion.Euler(doorTransform.eulerAngles + new Vector3(0, openAngle, 0));
+        AudioSource audioSource = doorObject.GetComponent<AudioSource>();
+        if (audioSource != null)
+        {
+            audioSource.Play();
+        }
     }
 
     void Update()
