@@ -8,14 +8,19 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
-
+        Invoke("GameStart", 0.01f);
     }
 
     // Update is called once per frame
     void Update()
     {
+
+    }
+
+    void GameStart()
+    {
         playerController = FindObjectOfType<PlayerController>();
-        playerController.ToggleCursor(false);
+        playerController.ToggleCursor(true);
         Time.timeScale = 0f;
     }
 }

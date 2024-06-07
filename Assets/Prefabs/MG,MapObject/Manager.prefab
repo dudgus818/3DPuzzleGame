@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 3742207370858657791}
   - component: {fileID: 481963756445288201}
   - component: {fileID: 4278582679225530234}
+  - component: {fileID: -1956270100591237822}
   m_Layer: 0
   m_Name: Manager
   m_TagString: Untagged
@@ -48,9 +49,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 92d6fdf5095e68c43941ee596accbb6d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  backgroundMusicSource: {fileID: 0}
-  soundEffectSource: {fileID: 0}
-  musicBoxSource: {fileID: 0}
+  backgroundMusicSource: {fileID: 872488124870215611}
+  soundEffectSource: {fileID: 3742207370858657791}
+  musicBoxSource: {fileID: 481963756445288201}
   backgroundMusicClip: {fileID: 8300000, guid: a5b4c9755f233f74497171dd7bb362a9, type: 3}
   runMusicClip: {fileID: 8300000, guid: c6514472c05b39640b70e57e6998d14b, type: 3}
   clickSound: {fileID: 8300000, guid: c5f6c73e9bb43c8419dbd49fd33ad9c9, type: 3}
@@ -357,3 +358,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b827fd94645e104b8786f785752d02a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &-1956270100591237822
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 797577079045304237}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 562bb7a763e961640a3a493ee2588ec7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  StopPanel: {fileID: 0}

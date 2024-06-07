@@ -15,7 +15,7 @@ public class BthManger : MonoBehaviour
     {
         AudioManager audioManager = FindAnyObjectByType<AudioManager>();
         playerController = FindObjectOfType<PlayerController>();
-        playerController.ToggleCursor(true);
+        playerController.ToggleCursor(false);
         StatPanel.SetActive(false);
         PostProcess.SetActive(true);
         Time.timeScale = 1f;
@@ -42,6 +42,7 @@ public class BthManger : MonoBehaviour
         {
             audioManager.PlayClickSound();
         }
+        Application.Quit();
     }
 
     public void MainMenuGame()
