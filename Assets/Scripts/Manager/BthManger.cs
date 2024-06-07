@@ -15,7 +15,7 @@ public class BthManger : MonoBehaviour
     {
         AudioManager audioManager = FindAnyObjectByType<AudioManager>();
         playerController = FindObjectOfType<PlayerController>();
-        playerController.ToggleCursor(false);
+        playerController.ToggleCursor();
         StatPanel.SetActive(false);
         PostProcess.SetActive(true);
         Time.timeScale = 1f;
