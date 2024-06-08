@@ -14,7 +14,7 @@ public class BthManger : MonoBehaviour
     public void StartPanel()
     {
         AudioManager audioManager = FindAnyObjectByType<AudioManager>();
-        playerController = FindObjectOfType<PlayerController>();
+        playerController = CharacterManager.Instance.Player.GetComponent<PlayerController>();
         playerController.ToggleCursor();
         StatPanel.SetActive(false);
         PostProcess.SetActive(true);

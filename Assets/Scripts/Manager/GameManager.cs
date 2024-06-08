@@ -1,25 +1,46 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+    private static GameManager _instance;
     private PlayerController playerController;
+
+    public static GameManager instance
+    {
+        get
+        {
+            if (_instance == null)
+            {
+                _instance = new GameObject("GameManager").AddComponent<GameManager>();
+            }
+            return _instance;
+        }
+    }
+
+    private void Awake()
+    {
+        if (_instance == null)
+        {
+            _instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            if (_instance == this)
+            {
+                Destroy(gameObject);
+            }
+        }
+    }
 
     void Start()
     {
-        Invoke("GameStart", 0.01f);
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
+        playerController = CharacterManager.Instance.Player.GetComponent<PlayerController>();
+        GameStart();
     }
 
     void GameStart()
     {
-        playerController = FindObjectOfType<PlayerController>();
         playerController.ToggleCursor();
         Time.timeScale = 0f;
     }
