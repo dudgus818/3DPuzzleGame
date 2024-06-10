@@ -13,6 +13,7 @@ public class Interaction : MonoBehaviour
     public InteractableObject currentInteractable;
 
     public TextMeshProUGUI promptText;
+    public GameObject interactableKey;
     private PlayerController playerController;
     private Camera camera;
 
@@ -39,6 +40,7 @@ public class Interaction : MonoBehaviour
                 {
                     if (hit.collider.gameObject != currentInteractable)
                     {
+                        SetInteractableKey();
                         currentInteractable = hit.collider.GetComponent<InteractableObject>();
                     }
                 }
@@ -46,16 +48,16 @@ public class Interaction : MonoBehaviour
             else
             {
                 currentInteractable = null;
+                interactableKey.gameObject.SetActive(false);
                 //promptText.gameObject.SetActive(false);
             }
         }
     }
 
-    //    private void SetPromptText()
-    //{
-    //    promptText.gameObject.SetActive(true);
-    //    promptText.text = curInteractable.GetInteractPrompt();
-    //}
+    private void SetInteractableKey()
+    {
+        interactableKey.gameObject.SetActive(true);
+    }
 
     public void OnInteractInput(InputAction.CallbackContext context)
     {
@@ -64,6 +66,7 @@ public class Interaction : MonoBehaviour
             currentInteractable.Interact();
             currentInteractable = null;
             playerController.ToggleCursor();
+            interactableKey.gameObject.SetActive(false);
             //promptText.gameObject.SetActive(false);
         }
     }

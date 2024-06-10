@@ -1630,7 +1630,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b0eb59d6ffeed04da042812c7169a5b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interactionUI: {fileID: 2063307920}
   interactPuzzleUI: {fileID: 400780678}
 --- !u!65 &1707834650
 BoxCollider:
@@ -1949,7 +1948,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b0eb59d6ffeed04da042812c7169a5b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interactionUI: {fileID: 2063307920}
   interactPuzzleUI: {fileID: 7733794976234337885}
 --- !u!4 &2115783556 stripped
 Transform:
@@ -2251,6 +2249,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 3976634244168438258, guid: 33334aa2f3ae8de4090cfa9e66ecc98a,
+        type: 3}
+      propertyPath: interactableKey
+      value: 
+      objectReference: {fileID: 2063307920}
+    - target: {fileID: 3976634244168438258, guid: 33334aa2f3ae8de4090cfa9e66ecc98a,
+        type: 3}
+      propertyPath: layerMask.m_Bits
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3976634244168438258, guid: 33334aa2f3ae8de4090cfa9e66ecc98a,
+        type: 3}
+      propertyPath: maxCheckDistance
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6946146662845686543, guid: 33334aa2f3ae8de4090cfa9e66ecc98a,
         type: 3}
@@ -2786,6 +2799,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_StaticEditorFlags
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4079870115294192750, guid: 4c394abbf2e198b42950c3c04a6a2638,
+        type: 3}
+      propertyPath: m_TagString
+      value: InteractableObject
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:

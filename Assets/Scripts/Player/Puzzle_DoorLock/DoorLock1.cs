@@ -35,7 +35,6 @@ public class DoorLock1 : MonoBehaviour
         {
             resultText.text = "Access Granted";
             doorController.isOpen = true;
-            interactableObject.SetLocked(true);
         }
         else
         {
