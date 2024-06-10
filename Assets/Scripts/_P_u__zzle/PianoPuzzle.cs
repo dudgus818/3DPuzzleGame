@@ -51,6 +51,7 @@ public class PianoPuzzle : MonoBehaviour
         AudioSource audioSource = doorObject.GetComponent<AudioSource>();
         if (audioSource != null)
         {
+            Debug.Log("OpenSec");
             audioSource.Play();
         }
         else
