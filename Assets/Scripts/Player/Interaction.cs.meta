@@ -3,7 +3,10 @@ guid: 73e081fc6f833954287bdcf8f133a6e8
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - curInteractGameObject: {instanceID: 0}
+  - currentInteractable: {instanceID: 0}
+  - promptText: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

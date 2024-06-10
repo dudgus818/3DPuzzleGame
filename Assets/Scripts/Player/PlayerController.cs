@@ -105,13 +105,4 @@ public class PlayerController : MonoBehaviour
         Cursor.visible = state;
         canLook = !state;
     }
-
-    //public void OnInteract(InputAction.CallbackContext context)
-    //{
-    //    if (context.phase == InputActionPhase.Performed && currentInteractable != null)
-    //    {
-    //        currentInteractable.Interact();
-    //        ToggleCursor();
-    //    }
-    //}
 }

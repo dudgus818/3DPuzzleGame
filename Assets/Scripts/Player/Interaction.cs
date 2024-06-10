@@ -7,10 +7,13 @@ public class Interaction : MonoBehaviour
     public float checkRate = 0.05f;
     private float lastCheckTime;
     public float maxCheckDistance;
+    public LayerMask layerMask;
 
     [Header("InteractableObject")]
     public InteractableObject currentInteractable;
 
+    public TextMeshProUGUI promptText;
+    public GameObject interactableKey;
     private PlayerController playerController;
     private Camera camera;
 
@@ -20,7 +23,6 @@ public class Interaction : MonoBehaviour
         playerController = CharacterManager.Instance.Player.GetComponent<PlayerController>();
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (Time.time - lastCheckTime > checkRate)
@@ -37,6 +39,7 @@ public class Interaction : MonoBehaviour
                 {
                     if (hit.collider.gameObject != currentInteractable)
                     {
+                        SetInteractableKey();
                         currentInteractable = hit.collider.GetComponent<InteractableObject>();
                     }
                 }
@@ -44,16 +47,15 @@ public class Interaction : MonoBehaviour
             else
             {
                 currentInteractable = null;
-                //promptText.gameObject.SetActive(false);
+                interactableKey.gameObject.SetActive(false);
             }
         }
     }
 
-    //    private void SetPromptText()
-    //{
-    //    promptText.gameObject.SetActive(true);
-    //    promptText.text = curInteractable.GetInteractPrompt();
-    //}
+    private void SetInteractableKey()
+    {
+        interactableKey.gameObject.SetActive(true);
+    }
 
     public void OnInteractInput(InputAction.CallbackContext context)
     {
@@ -62,6 +64,7 @@ public class Interaction : MonoBehaviour
             currentInteractable.Interact();
             currentInteractable = null;
             playerController.ToggleCursor();
+            interactableKey.gameObject.SetActive(false);
             //promptText.gameObject.SetActive(false);
 
             AudioManager audioManager = FindAnyObjectByType<AudioManager>();
