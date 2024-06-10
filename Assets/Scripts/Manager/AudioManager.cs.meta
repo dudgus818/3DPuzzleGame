@@ -7,22 +7,17 @@ MonoImporter:
   - backgroundMusicSource: {instanceID: 0}
   - soundEffectSource: {instanceID: 0}
   - musicBoxSource: {instanceID: 0}
-  - mapLampSource: {instanceID: 0}
-  - LampSource: {instanceID: 0}
   - backgroundMusicClip: {fileID: 8300000, guid: a5b4c9755f233f74497171dd7bb362a9,
       type: 3}
   - runMusicClip: {fileID: 8300000, guid: c6514472c05b39640b70e57e6998d14b, type: 3}
   - clickSound: {fileID: 8300000, guid: c5f6c73e9bb43c8419dbd49fd33ad9c9, type: 3}
   - setSound: {fileID: 8300000, guid: 24a6b6024da1b834e8289d48ca273823, type: 3}
-  - mapLampSound: {fileID: 8300000, guid: 1a7f36dfffea4b54296bc5ebab282cd2, type: 3}
-  - lampSound: {fileID: 8300000, guid: e84867caf40955049ba0c2d1b2eb8cb5, type: 3}
   - openInventorySound: {fileID: 8300000, guid: c9e6abce7d313974a850e9a7e8bc3670,
       type: 3}
   - musicboxSound: {fileID: 8300000, guid: 46033b77d503f114d844e0477fe1ce55, type: 3}
-  - doorOpenSound: {fileID: 8300000, guid: 29fe5b7d1ed7dcd4488ec35cdfbfdcbf, type: 3}
-  - SecretdoorOpenSound: {fileID: 8300000, guid: 856acb866912a51478607dee565fe059,
-      type: 3}
-  - useKeySound: {fileID: 8300000, guid: ca05f191edae66f48a0121e4404a5d62, type: 3}
+  - buttonSound: {fileID: 8300000, guid: 646444054ffcf084fb2b2799076e10a2, type: 3}
+  - errorSound: {fileID: 8300000, guid: 3b4c6808f1c76bb46960a1ba20619f11, type: 3}
+  - okSound: {fileID: 8300000, guid: a6f4668d4c8a4764cb16d249a40afd40, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
