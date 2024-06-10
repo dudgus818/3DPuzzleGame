@@ -35,6 +35,7 @@ public class InteractableObject : MonoBehaviour
             {
                 interactionUI.SetActive(state);
             }
+
         }
     }
 

@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 5392518440090467879}
   - component: {fileID: 3177702273369909381}
   - component: {fileID: 6670384350011891274}
+  - component: {fileID: 5471612126979569210}
   m_Layer: 0
   m_Name: MonsterRespwon
   m_TagString: Untagged
@@ -133,3 +134,16 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &5471612126979569210
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 885626108600926422}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dcb572df89fc7be418da9b05bbf7f01a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MonsterSoundObject: {fileID: 0}

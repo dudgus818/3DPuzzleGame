@@ -63,6 +63,12 @@ public class Interaction : MonoBehaviour
             currentInteractable = null;
             playerController.ToggleCursor();
             //promptText.gameObject.SetActive(false);
+
+            AudioManager audioManager = FindAnyObjectByType<AudioManager>();
+            if (audioManager != null)
+            {
+                audioManager.PlayInventorySound();
+            }
         }
     }
 }
