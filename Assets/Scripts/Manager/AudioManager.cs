@@ -16,6 +16,9 @@ public class AudioManager : MonoBehaviour
     public AudioClip setSound;
     public AudioClip openInventorySound;
     public AudioClip musicboxSound;
+    public AudioClip buttonSound;
+    public AudioClip errorSound;
+    public AudioClip okSound;
 
     private void Awake()
     {
@@ -61,6 +64,33 @@ public class AudioManager : MonoBehaviour
         if (clickSound != null)
         {
             soundEffectSource.clip = setSound;
+            soundEffectSource.Play();
+        }
+    }
+    
+    public void ButtonSound()
+    {
+        if (clickSound != null)
+        {
+            soundEffectSource.clip = buttonSound;
+            soundEffectSource.Play();
+        }
+    }
+
+    public void ErrorSound()
+    {
+        if (clickSound != null)
+        {
+            soundEffectSource.clip = errorSound;
+            soundEffectSource.Play();
+        }
+    }
+
+    public void OkSound()
+    {
+        if (clickSound != null)
+        {
+            soundEffectSource.clip = okSound;
             soundEffectSource.Play();
         }
     }

@@ -25,6 +25,12 @@ public class DoorLock : MonoBehaviour
             input += number;
             resultText.text = input;
         }
+        
+        AudioManager audioManager = FindAnyObjectByType<AudioManager>();
+        if (audioManager != null)
+        {
+            audioManager.ButtonSound();
+        }
     }
 
     // 'C' 버튼이 클릭될 때 호출되는 메서드 (초기화)
@@ -32,6 +38,13 @@ public class DoorLock : MonoBehaviour
     {
         input = "";
         resultText.text = "0";
+
+        AudioManager audioManager = FindAnyObjectByType<AudioManager>();
+        if (audioManager != null)
+        {
+            audioManager.ButtonSound();
+        }
+
     }
 
     // 비밀번호 확인 메서드
@@ -42,11 +55,31 @@ public class DoorLock : MonoBehaviour
             resultText.text = "Access";
             doorController.isOpen = true;
             playerController.ToggleCursor();
+
+            AudioManager audioManager = FindAnyObjectByType<AudioManager>();
+            if (audioManager != null)
+            {
+                audioManager.OkSound();
+            }
+
+            OpenDoorSound openDoorSound = GetComponent<OpenDoorSound>();
+            if (openDoorSound != null)
+            {
+                openDoorSound.OpenDoor();
+            }
+
         }
         else
         {
             resultText.text = "ERROR";
             input = ""; // 입력 초기화
+
+            AudioManager audioManager = FindAnyObjectByType<AudioManager>();
+            if (audioManager != null)
+            {
+                audioManager.ErrorSound();
+            }
+
         }
     }
 }

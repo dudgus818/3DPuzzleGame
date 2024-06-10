@@ -1,3 +1,4 @@
+using System.Diagnostics;
 using UnityEngine;
 
 public class DoorController : MonoBehaviour
@@ -14,11 +15,6 @@ public class DoorController : MonoBehaviour
     {
         closedRotation = doorTransform.rotation;
         openRotation = Quaternion.Euler(doorTransform.eulerAngles + new Vector3(0, openAngle, 0));
-        AudioSource audioSource = doorObject.GetComponent<AudioSource>();
-        if (audioSource != null)
-        {
-            audioSource.Play();
-        }
     }
 
     void Update()
@@ -37,4 +33,6 @@ public class DoorController : MonoBehaviour
     {
         isOpen = !isOpen;
     }
+
+
 }
