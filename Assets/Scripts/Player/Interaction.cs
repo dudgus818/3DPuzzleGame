@@ -7,10 +7,12 @@ public class Interaction : MonoBehaviour
     public float checkRate = 0.05f;
     private float lastCheckTime;
     public float maxCheckDistance;
+    public LayerMask layerMask;
 
     [Header("InteractableObject")]
     public InteractableObject currentInteractable;
 
+    public TextMeshProUGUI promptText;
     private PlayerController playerController;
     private Camera camera;
 
