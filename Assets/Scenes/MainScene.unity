@@ -1197,6 +1197,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: Manager
       objectReference: {fileID: 0}
+    - target: {fileID: 6853276502035789474, guid: e485b719e45c46b42b388b1877cb5e62,
+        type: 3}
+      propertyPath: okSound
+      value: 
+      objectReference: {fileID: 8300000, guid: a6f4668d4c8a4764cb16d249a40afd40, type: 3}
+    - target: {fileID: 6853276502035789474, guid: e485b719e45c46b42b388b1877cb5e62,
+        type: 3}
+      propertyPath: errorSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 3b4c6808f1c76bb46960a1ba20619f11, type: 3}
+    - target: {fileID: 6853276502035789474, guid: e485b719e45c46b42b388b1877cb5e62,
+        type: 3}
+      propertyPath: buttonSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 646444054ffcf084fb2b2799076e10a2, type: 3}
     - target: {fileID: 7800073544201445658, guid: e485b719e45c46b42b388b1877cb5e62,
         type: 3}
       propertyPath: m_LocalPosition.x
