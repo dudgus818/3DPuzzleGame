@@ -3,7 +3,7 @@ using UnityEngine;
 public class InteractableObject : MonoBehaviour
 {
     public GameObject interactionUI;
-    public PlayerController playerController;
+    public GameObject interactPuzzleUI;
 
     private bool isLocked = false; // 상호작용 잠금 상태를 나타내는 플래그
 
@@ -21,17 +21,16 @@ public class InteractableObject : MonoBehaviour
         {
             SetInteractionUIState(other, false);
         }
+        else if (interactPuzzleUI != null)
+        {
+            interactPuzzleUI.SetActive(false);
+        }
     }
 
     private void SetInteractionUIState(Collider other, bool state)
     {
         if (other.CompareTag("Player"))
         {
-            if (playerController != null)
-            {
-                playerController.ToggleCursor(state);
-            }
-
             if (interactionUI != null)
             {
                 interactionUI.SetActive(state);
@@ -41,20 +40,28 @@ public class InteractableObject : MonoBehaviour
 
     public void Interact()
     {
-        // 상호작용 코드 구현
-        Debug.Log("상호작용된 오브젝트: " + gameObject.name);
-        interactionUI.SetActive(false);
+        if(isPuzzleOpen())
+        {
+            interactPuzzleUI.SetActive(false);
+        }
+        else
+        {
+            interactPuzzleUI.SetActive(true);
+        }
+    }
+
+    public bool isPuzzleOpen()
+    {
+        return interactPuzzleUI.activeInHierarchy;
     }
 
     public void SetLocked(bool locked)
     {
         isLocked = locked;
 
-        // 잠금 상태로 설정되면 상호작용 UI를 비활성화
         if (locked && interactionUI != null)
         {
             interactionUI.SetActive(false);
-            playerController.ToggleCursor(false);
         }
     }
 }

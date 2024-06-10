@@ -14,7 +14,7 @@ TagManager:
   - UI
   - Player
   - Wall
-  - PostProcess
+  - UIObject
   - 
   - 
   - 
@@ -41,4 +41,13 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: 1
+    uniqueID: 4074414989
+    locked: 0
+  - name: 2
+    uniqueID: 4194279631
+    locked: 0
+  - name: 3
+    uniqueID: 2191124999
     locked: 0
