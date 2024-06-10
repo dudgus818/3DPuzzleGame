@@ -1,46 +1,53 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Objectspawner : MonoBehaviour
 {
-    public GameObject enemyPrefab;
-    public Transform player;
-    public Vector3 spawnAreaMin;
-    public Vector3 spawnAreaMax;
-    public float spawnIntervalMin = 30f;
-    public float spawnIntervalMax = 40f;
-    public float enemyLifeTime = 10f;
-    public AudioClip spawnSound;
-    private AudioSource audioSource;
+    public GameObject enemyPrefab; // 적 프리팹
+    public Transform spawnLocation; // 스폰 위치 오브젝트
+    public Transform player; // 플레이어 트랜스폼
+    public bool shouldSpawn = false; // 적을 생성할지 여부
+    private GameObject enemy; // 생성된 적
+    private float initialSpeed = 1f; // 초기 적 속도
+    private float speedIncreaseRate = 1.1f; // 적 속도 증가율
+    private float spawnTime; // 마지막 스폰 시간
 
-    private void Start()
+    private void Update()
     {
-        audioSource = GetComponent<AudioSource>();
-        StartCoroutine(SpawnEnemies());
-    }
-
-    private IEnumerator SpawnEnemies()
-    {
-        while (true)
+        if (shouldSpawn && enemy == null)
         {
-            float spawnInterval = Random.Range(spawnIntervalMin, spawnIntervalMax);
-            yield return new WaitForSeconds(spawnInterval);
+            SpawnEnemy();
+            spawnTime = Time.time;
+        }
 
-            Vector3 spawnPosition = new Vector3(
-                Random.Range(spawnAreaMin.x, spawnAreaMax.x),
-                Random.Range(spawnAreaMin.y, spawnAreaMax.y),
-                Random.Range(spawnAreaMin.z, spawnAreaMax.z)
-            );
-
-            GameObject enemy = Instantiate(enemyPrefab, spawnPosition, Quaternion.identity);
-            audioSource.PlayOneShot(spawnSound);
-
+        if (enemy != null)
+        {
+            // 시간이 지남에 따라 적의 속도 증가
+            float timeSinceSpawn = Time.time - spawnTime;
             EnemyController enemyController = enemy.GetComponent<EnemyController>();
             if (enemyController != null)
             {
-                enemyController.Initialize(player, enemyLifeTime);
+                float newSpeed = initialSpeed * Mathf.Pow(speedIncreaseRate, timeSinceSpawn);
+                enemyController.SetSpeed(newSpeed);
             }
         }
+    }
+
+    private void SpawnEnemy()
+    {
+        Vector3 spawnPosition = spawnLocation.position; // 스폰 위치 설정
+        enemy = Instantiate(enemyPrefab, spawnPosition, Quaternion.identity);
+
+        // 적 초기화
+        EnemyController enemyController = enemy.GetComponent<EnemyController>();
+        if (enemyController != null)
+        {
+            enemyController.Initialize(player); // 플레이어 정보를 넘김
+        }
+    }
+
+    // 외부에서 호출할 수 있는 메서드로 shouldSpawn 값을 설정
+    public void SetShouldSpawn(bool value)
+    {
+        shouldSpawn = value;
     }
 }

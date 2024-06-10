@@ -1,13 +1,14 @@
 using UnityEngine;
 using TMPro;
+using Unity.VisualScripting;
 
-public class DoorLock2 : MonoBehaviour
+public class DoorLock : MonoBehaviour
 {
     public TMP_Text resultText;  // 결과를 표시할 텍스트 필드
     private string input = "";  // 사용자 입력을 저장할 문자열
-    private string correctPassword = "CANIS"; // 설정된 테스트 비밀번호
+    public string correctPassword = "1234"; // 설정된 테스트 비밀번호
+    public DoorController doorController;
     public InteractableObject interactableObject;
-    public GameObject irongrating;
 
     private PlayerController playerController;
 
@@ -19,12 +20,12 @@ public class DoorLock2 : MonoBehaviour
     // 숫자 버튼이 클릭될 때 호출되는 메서드
     public void OnNumberButtonClick(string number)
     {
-        if (input.Length < 5)
+        if (input.Length < 4)
         {
             input += number;
             resultText.text = input;
         }
-
+        
         AudioManager audioManager = FindAnyObjectByType<AudioManager>();
         if (audioManager != null)
         {
@@ -52,27 +53,21 @@ public class DoorLock2 : MonoBehaviour
         if (input == correctPassword)
         {
             resultText.text = "Access";
-            Animator animator = irongrating.GetComponent<Animator>();
-
-            if (animator != null && animator.isActiveAndEnabled)
-            {
-                Debug.Log("Setting Animator Bool to true");
-                animator.SetBool("IronIsOpen", true);
-            }
+            doorController.isOpen = true;
             GameManager.instance.ToggleCursor();
+            Invoke("DisablePuzzleUI", 0.5f);
 
             AudioManager audioManager = FindAnyObjectByType<AudioManager>();
-            OpenDoorSound openDoorSound = GetComponent<OpenDoorSound>();
             if (audioManager != null)
             {
                 audioManager.OkSound();
             }
+
+            OpenDoorSound openDoorSound = GetComponent<OpenDoorSound>();
             if (openDoorSound != null)
             {
-                Debug.Log("MetalOpenDoor");
-                openDoorSound.MetalOpenDoor();
+                openDoorSound.OpenDoor();
             }
-            Invoke("DisablePuzzleUI", 1.0f);
 
         }
         else
@@ -88,10 +83,9 @@ public class DoorLock2 : MonoBehaviour
 
         }
     }
-    
     void DisablePuzzleUI()
     {
-        if(gameObject.activeSelf)
+        if (gameObject.activeSelf)
         {
             gameObject.SetActive(false);
         }
