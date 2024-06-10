@@ -33,10 +33,6 @@ public class PlayerController : MonoBehaviour
         _rigidbody = GetComponent<Rigidbody>();
     }
 
-    private void Start()
-    {
-        Cursor.lockState = CursorLockMode.Locked;
-    }
     void FixedUpdate()
     {
         Move();
@@ -63,10 +59,13 @@ public class PlayerController : MonoBehaviour
 
     void CameraLook()
     {
-        camCurXRot += mouseDelta.y * lookSensitivity;
-        camCurXRot = Mathf.Clamp(camCurXRot, minXLook, maxXLook);
-        cameraContainer.localEulerAngles = new Vector3(-camCurXRot, 0, 0);
-        transform.eulerAngles += new Vector3(0, mouseDelta.x * lookSensitivity, 0);
+        if(!GameManager.instance.isToggle)
+        {
+            camCurXRot += mouseDelta.y * lookSensitivity;
+            camCurXRot = Mathf.Clamp(camCurXRot, minXLook, maxXLook);
+            cameraContainer.localEulerAngles = new Vector3(-camCurXRot, 0, 0);
+            transform.eulerAngles += new Vector3(0, mouseDelta.x * lookSensitivity, 0);
+        }
     }
 
     public void OnMove(InputAction.CallbackContext context)
@@ -96,13 +95,5 @@ public class PlayerController : MonoBehaviour
     public void OnLook(InputAction.CallbackContext context)
     {
         mouseDelta = context.ReadValue<Vector2>();
-    }
-
-    public void ToggleCursor()
-    {
-        bool state = Cursor.lockState == CursorLockMode.Locked;
-        Cursor.lockState = state ? CursorLockMode.None : CursorLockMode.Locked;
-        Cursor.visible = state;
-        canLook = !state;
     }
 }
