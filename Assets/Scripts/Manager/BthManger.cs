@@ -15,10 +15,9 @@ public class BthManger : MonoBehaviour
     {
         AudioManager audioManager = FindAnyObjectByType<AudioManager>();
         playerController = CharacterManager.Instance.Player.GetComponent<PlayerController>();
-        playerController.ToggleCursor();
+        GameManager.instance.ToggleCursor();
         StatPanel.SetActive(false);
         PostProcess.SetActive(true);
-        Time.timeScale = 1f;
 
         if (audioManager != null)
         {

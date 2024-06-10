@@ -54,7 +54,7 @@ public class DoorLock : MonoBehaviour
         {
             resultText.text = "Access";
             doorController.isOpen = true;
-            playerController.ToggleCursor();
+            GameManager.instance.ToggleCursor();
 
             AudioManager audioManager = FindAnyObjectByType<AudioManager>();
             if (audioManager != null)

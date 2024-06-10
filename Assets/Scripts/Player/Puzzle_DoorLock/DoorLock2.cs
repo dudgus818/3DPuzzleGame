@@ -59,7 +59,7 @@ public class DoorLock2 : MonoBehaviour
                 Debug.Log("Setting Animator Bool to true");
                 animator.SetBool("IronIsOpen", true);
             }
-            playerController.ToggleCursor();
+            GameManager.instance.ToggleCursor();
 
             AudioManager audioManager = FindAnyObjectByType<AudioManager>();
             if (audioManager != null)

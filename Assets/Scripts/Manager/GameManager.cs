@@ -5,6 +5,8 @@ public class GameManager : MonoBehaviour
     private static GameManager _instance;
     private PlayerController playerController;
 
+    public bool isToggle = false;
+
     public static GameManager instance
     {
         get
@@ -36,12 +38,23 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         playerController = CharacterManager.Instance.Player.GetComponent<PlayerController>();
-        GameStart();
+        ToggleCursor();
     }
 
-    void GameStart()
+    public void ToggleCursor()
     {
-        playerController.ToggleCursor();
-        Time.timeScale = 0f;
+        isToggle = !isToggle;
+        if(isToggle )
+        {
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+
+        }
+        else
+        {
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
+
+        }
     }
 }
