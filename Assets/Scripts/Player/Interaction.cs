@@ -23,7 +23,6 @@ public class Interaction : MonoBehaviour
         playerController = CharacterManager.Instance.Player.GetComponent<PlayerController>();
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (Time.time - lastCheckTime > checkRate)
@@ -49,7 +48,6 @@ public class Interaction : MonoBehaviour
             {
                 currentInteractable = null;
                 interactableKey.gameObject.SetActive(false);
-                //promptText.gameObject.SetActive(false);
             }
         }
     }

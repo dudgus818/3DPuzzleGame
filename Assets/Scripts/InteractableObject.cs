@@ -20,7 +20,6 @@ public class InteractableObject : MonoBehaviour
         }
         else
         {
-            Debug.Log("MASIC");
             interactPuzzleUI.SetActive(true);
         }
     }

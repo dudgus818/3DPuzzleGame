@@ -1,14 +1,11 @@
 using UnityEngine;
 using TMPro;
-using Unity.VisualScripting;
-using Unity.VisualScripting.Antlr3.Runtime;
 
 public class DoorLock2 : MonoBehaviour
 {
     public TMP_Text resultText;  // 결과를 표시할 텍스트 필드
     private string input = "";  // 사용자 입력을 저장할 문자열
     private string correctPassword = "CANIS"; // 설정된 테스트 비밀번호
-    public DoorController doorController;
     public InteractableObject interactableObject;
     public GameObject irongrating;
 
@@ -56,13 +53,12 @@ public class DoorLock2 : MonoBehaviour
         {
             resultText.text = "Access";
             Animator animator = irongrating.GetComponent<Animator>();
-            
+
             if (animator != null && animator.isActiveAndEnabled)
             {
                 Debug.Log("Setting Animator Bool to true");
                 animator.SetBool("IronIsOpen", true);
             }
-            interactableObject.SetLocked(true);
             playerController.ToggleCursor();
 
             AudioManager audioManager = FindAnyObjectByType<AudioManager>();
@@ -76,6 +72,7 @@ public class DoorLock2 : MonoBehaviour
             {
                 openDoorSound.MetalOpenDoor();
             }
+            Invoke("DisablePuzzleUI", 1.0f);
 
         }
         else
@@ -89,6 +86,18 @@ public class DoorLock2 : MonoBehaviour
                 audioManager.ErrorSound();
             }
 
+        }
+    }
+    
+    void DisablePuzzleUI()
+    {
+        if(gameObject.activeSelf)
+        {
+            gameObject.SetActive(false);
+        }
+        else
+        {
+            Debug.Log("비활성화 유지.");
         }
     }
 }
