@@ -21,10 +21,11 @@ public class PlayerController : MonoBehaviour
     private Vector2 mouseDelta;
     public bool canLook = true;
 
+    [Header("InteractableObject")]
+    public InteractableObject currentInteractable;
+
     public Action inventory;
     private Rigidbody _rigidbody;
-
-    private InteractableObject currentInteractable;
 
 
     private void Awake()
@@ -96,35 +97,21 @@ public class PlayerController : MonoBehaviour
     {
         mouseDelta = context.ReadValue<Vector2>();
     }
-    
-    void ToggleCursor()
+
+    public void ToggleCursor()
     {
-        bool toggle = Cursor.lockState == CursorLockMode.Locked;
-        Cursor.lockState = toggle ? CursorLockMode.None : CursorLockMode.Locked;
-        canLook = !toggle;
+        bool state = Cursor.lockState == CursorLockMode.Locked;
+        Cursor.lockState = state ? CursorLockMode.None : CursorLockMode.Locked;
+        Cursor.visible = state;
+        canLook = !state;
     }
 
-    public void OnInteract(InputAction.CallbackContext context)
-    {
-        if (context.phase == InputActionPhase.Performed && currentInteractable != null)
-        {
-            currentInteractable.Interact();
-        }
-    }
-
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.CompareTag("InteractableObject"))
-        {
-            currentInteractable = other.GetComponent<InteractableObject>();
-        }
-    }
-
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.CompareTag("InteractableObject"))
-        {
-            currentInteractable = null;
-        }
-    }
+    //public void OnInteract(InputAction.CallbackContext context)
+    //{
+    //    if (context.phase == InputActionPhase.Performed && currentInteractable != null)
+    //    {
+    //        currentInteractable.Interact();
+    //        ToggleCursor();
+    //    }
+    //}
 }
