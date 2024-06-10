@@ -62,14 +62,14 @@ public class DoorLock2 : MonoBehaviour
             GameManager.instance.ToggleCursor();
 
             AudioManager audioManager = FindAnyObjectByType<AudioManager>();
+            OpenDoorSound openDoorSound = GetComponent<OpenDoorSound>();
             if (audioManager != null)
             {
                 audioManager.OkSound();
             }
-
-            OpenDoorSound openDoorSound = GetComponent<OpenDoorSound>();
             if (openDoorSound != null)
             {
+                Debug.Log("MetalOpenDoor");
                 openDoorSound.MetalOpenDoor();
             }
             Invoke("DisablePuzzleUI", 1.0f);
