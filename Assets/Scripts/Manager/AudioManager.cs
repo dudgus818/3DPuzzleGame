@@ -129,5 +129,12 @@ public class AudioManager : MonoBehaviour
             backgroundMusicSource.Stop();
         }
     }
+    public void StopMusicBoxPlay()
+    {
+        if (backgroundMusicSource != null)
+        {
+            musicBoxSource.Stop();
+        }
+    }
 
 }
