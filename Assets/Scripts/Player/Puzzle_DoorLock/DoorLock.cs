@@ -63,6 +63,12 @@ public class DoorLock : MonoBehaviour
                 audioManager.OkSound();
             }
 
+            OpenDoorSound openDoorSound = GetComponent<OpenDoorSound>();
+            if (openDoorSound != null)
+            {
+                openDoorSound.OpenDoor();
+            }
+
         }
         else
         {
