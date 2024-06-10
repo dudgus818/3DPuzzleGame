@@ -6,6 +6,7 @@ using UnityEngine;
 public class OpenDoorSound : MonoBehaviour
 {
     public AudioClip clip;
+    public AudioClip clip2;
     public GameObject doorObject;
 
     public void OpenDoor()
@@ -15,6 +16,16 @@ public class OpenDoorSound : MonoBehaviour
         if (audioSource != null)
         {
             audioSource.PlayOneShot(clip);
+        }
+    }
+
+    public void MetalOpenDoor()
+    {
+        AudioSource audioSource = doorObject.GetComponent<AudioSource>();
+
+        if (audioSource != null)
+        {
+            audioSource.PlayOneShot(clip2);
         }
     }
 }

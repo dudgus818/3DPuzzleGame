@@ -368,6 +368,47 @@ Camera:
     type: 3}
   m_PrefabInstance: {fileID: 145138945}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &293024835 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3772060494845929782, guid: 4c394abbf2e198b42950c3c04a6a2638,
+    type: 3}
+  m_PrefabInstance: {fileID: 4078120347645989993}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &293024837
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 293024835}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b0eb59d6ffeed04da042812c7169a5b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactionUI: {fileID: 2063307920}
+  interactPuzzleUI: {fileID: 485546838}
+--- !u!65 &293024838
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 293024835}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1.7, y: 0.91, z: 0.63}
+  m_Center: {x: -0.01, y: 0.61, z: -0.12}
 --- !u!1 &293035799 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4079791492396539385, guid: 4c394abbf2e198b42950c3c04a6a2638,
@@ -427,7 +468,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0.71053314
+      value: 1.1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -435,7 +476,7 @@ AudioSource:
       inWeight: 0
       outWeight: 0
     - serializedVersion: 3
-      time: 0.056167603
+      time: 0.11659241
       value: 0
       inSlope: -1.002004
       outSlope: -1.002004
@@ -451,7 +492,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 1
+      value: 0.746
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -481,7 +522,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0.72293854
+      value: 0.651
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -499,10 +540,55 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3305434245579092281, guid: 039f3d195dea0ec43863ad43a521494f,
+        type: 3}
+      propertyPath: Pan2D
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3305434245579092281, guid: 039f3d195dea0ec43863ad43a521494f,
+        type: 3}
+      propertyPath: MinDistance
+      value: 0.53167105
+      objectReference: {fileID: 0}
+    - target: {fileID: 3305434245579092281, guid: 039f3d195dea0ec43863ad43a521494f,
+        type: 3}
+      propertyPath: DopplerLevel
+      value: 1.93
+      objectReference: {fileID: 0}
+    - target: {fileID: 3305434245579092281, guid: 039f3d195dea0ec43863ad43a521494f,
+        type: 3}
+      propertyPath: rolloffCustomCurve.m_Curve.Array.data[1].time
+      value: 0.25076294
+      objectReference: {fileID: 0}
+    - target: {fileID: 3305434245579092281, guid: 039f3d195dea0ec43863ad43a521494f,
+        type: 3}
+      propertyPath: spreadCustomCurve.m_Curve.Array.data[0].value
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3305434245579092281, guid: 039f3d195dea0ec43863ad43a521494f,
+        type: 3}
+      propertyPath: rolloffCustomCurve.m_Curve.Array.data[1].value
+      value: 0.022216797
+      objectReference: {fileID: 0}
+    - target: {fileID: 3305434245579092281, guid: 039f3d195dea0ec43863ad43a521494f,
+        type: 3}
+      propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
+      value: 0.741
+      objectReference: {fileID: 0}
+    - target: {fileID: 3305434245579092281, guid: 039f3d195dea0ec43863ad43a521494f,
+        type: 3}
+      propertyPath: reverbZoneMixCustomCurve.m_Curve.Array.data[0].time
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3305434245579092281, guid: 039f3d195dea0ec43863ad43a521494f,
+        type: 3}
+      propertyPath: reverbZoneMixCustomCurve.m_Curve.Array.data[0].value
+      value: 0.29595047
+      objectReference: {fileID: 0}
     - target: {fileID: 8218305358409839206, guid: 039f3d195dea0ec43863ad43a521494f,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.54
+      value: 3.38
       objectReference: {fileID: 0}
     - target: {fileID: 8218305358409839206, guid: 039f3d195dea0ec43863ad43a521494f,
         type: 3}
@@ -770,6 +856,12 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 478308287}
   m_CullTransparentMesh: 1
+--- !u!1 &485546838 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5239408425718734145, guid: eb511b06264745f43996eaac18cd3292,
+    type: 3}
+  m_PrefabInstance: {fileID: 601565180}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &601565180
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -782,6 +874,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Canvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 43278387989260701, guid: eb511b06264745f43996eaac18cd3292,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1385042211133046468, guid: eb511b06264745f43996eaac18cd3292,
         type: 3}
@@ -1121,103 +1218,7 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 4288825744817021042}
   m_PrefabAsset: {fileID: 0}
---- !u!82 &975801371
-AudioSource:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 975801366}
-  m_Enabled: 1
-  serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
-  m_Volume: 1
-  m_Pitch: 1
-  Loop: 0
-  Mute: 0
-  Spatialize: 0
-  SpatializePostEffects: 0
-  Priority: 128
-  DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
-  Pan2D: 0
-  rolloffMode: 0
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
-  rolloffCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  panLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0.912
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  spreadCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  reverbZoneMixCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0.824
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
---- !u!114 &975801372
+--- !u!114 &975801377
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1230,7 +1231,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   clip: {fileID: 8300000, guid: 29fe5b7d1ed7dcd4488ec35cdfbfdcbf, type: 3}
+  clip2: {fileID: 8300000, guid: cf3833c298a14dc45a6cf95ebb718510, type: 3}
   doorObject: {fileID: 2115783553}
+--- !u!1 &990027481 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 100000, guid: 4aa5a7ef56dd26f4d8cdad18e6dd51d2,
+    type: 3}
+  m_PrefabInstance: {fileID: 990058617}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &990058617
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1242,6 +1250,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 4aa5a7ef56dd26f4d8cdad18e6dd51d2, type: 3}
       propertyPath: m_Name
       value: Door_A
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 4aa5a7ef56dd26f4d8cdad18e6dd51d2, type: 3}
+      propertyPath: m_TagString
+      value: InteractableObject
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 4aa5a7ef56dd26f4d8cdad18e6dd51d2, type: 3}
       propertyPath: m_LocalScale.x
@@ -1298,9 +1310,29 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 100000, guid: 4aa5a7ef56dd26f4d8cdad18e6dd51d2,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1926178644}
+    - targetCorrespondingSourceObject: {fileID: 100000, guid: 4aa5a7ef56dd26f4d8cdad18e6dd51d2,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1926178645}
+    - targetCorrespondingSourceObject: {fileID: 100000, guid: 4aa5a7ef56dd26f4d8cdad18e6dd51d2,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1926178649}
+    - targetCorrespondingSourceObject: {fileID: 100000, guid: 4aa5a7ef56dd26f4d8cdad18e6dd51d2,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1926178650}
+    - targetCorrespondingSourceObject: {fileID: 100000, guid: 4aa5a7ef56dd26f4d8cdad18e6dd51d2,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1926178651}
   m_SourcePrefab: {fileID: 100100000, guid: 4aa5a7ef56dd26f4d8cdad18e6dd51d2, type: 3}
---- !u!4 &990058618 stripped
+--- !u!4 &990184185 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 4aa5a7ef56dd26f4d8cdad18e6dd51d2,
     type: 3}
@@ -1318,6 +1350,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Manager
+      objectReference: {fileID: 0}
+    - target: {fileID: 872488124870215611, guid: e485b719e45c46b42b388b1877cb5e62,
+        type: 3}
+      propertyPath: m_Volume
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3742207370858657791, guid: e485b719e45c46b42b388b1877cb5e62,
+        type: 3}
+      propertyPath: m_Pitch
+      value: 0.78
+      objectReference: {fileID: 0}
+    - target: {fileID: 3742207370858657791, guid: e485b719e45c46b42b388b1877cb5e62,
+        type: 3}
+      propertyPath: m_Volume
+      value: 0.663
       objectReference: {fileID: 0}
     - target: {fileID: 6853276502035789474, guid: e485b719e45c46b42b388b1877cb5e62,
         type: 3}
@@ -1337,7 +1384,7 @@ PrefabInstance:
     - target: {fileID: 7800073544201445658, guid: e485b719e45c46b42b388b1877cb5e62,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.0759917
+      value: 3.33
       objectReference: {fileID: 0}
     - target: {fileID: 7800073544201445658, guid: e485b719e45c46b42b388b1877cb5e62,
         type: 3}
@@ -1772,6 +1819,252 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!95 &1926178644
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 990027481}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: ae590ee9b9c0c314a8fc9bba5fd67a93, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1926178645
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 990027481}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b0eb59d6ffeed04da042812c7169a5b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactionUI: {fileID: 2063307920}
+  interactPuzzleUI: {fileID: 6984248454116728061}
+--- !u!65 &1926178649
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 990027481}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.08, y: 4.2250795, z: 2.3388617}
+  m_Center: {x: 0.028565293, y: 2.109679, z: -1.1694309}
+--- !u!64 &1926178650
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 990027481}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4300010, guid: c2155ffe2a264a143a77825d2c95977d, type: 3}
+--- !u!82 &1926178651
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 990027481}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 2
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0.72834015
+      inSlope: -500.20065
+      outSlope: -500.20065
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.004
+      value: 0.5
+      inSlope: -125.05016
+      outSlope: -125.05016
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.008
+      value: 0.25
+      inSlope: -31.26254
+      outSlope: -31.26254
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.016
+      value: 0.125
+      inSlope: -7.815635
+      outSlope: -7.815635
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.032
+      value: 0.0625
+      inSlope: -1.9539088
+      outSlope: -1.9539088
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.064
+      value: 0.03125
+      inSlope: -0.4884772
+      outSlope: -0.4884772
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.128
+      value: 0.015625
+      inSlope: -0.1221193
+      outSlope: -0.1221193
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.256
+      value: 0.0078125
+      inSlope: -0.030529825
+      outSlope: -0.030529825
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.512
+      value: 0.00390625
+      inSlope: -0.0076324563
+      outSlope: -0.0076324563
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 0.002
+      inSlope: -0.002000801
+      outSlope: -0.002000801
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0.951
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0.893
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &2023048200
 GameObject:
   m_ObjectHideFlags: 0
@@ -1923,7 +2216,7 @@ MonoBehaviour:
   doorSpeed: 1.1
   isOpen: 0
   doorObject: {fileID: 2115783553}
---- !u!82 &2115783565
+--- !u!82 &2115783573
 AudioSource:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1933,7 +2226,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 29fe5b7d1ed7dcd4488ec35cdfbfdcbf, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -1979,7 +2272,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0.896
+      value: 0
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -2009,7 +2302,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0.672
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -2019,20 +2312,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &2115783567
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2115783553}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 70df8eaa3802d16448a0d06e6a00578b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  clip: {fileID: 8300000, guid: 29fe5b7d1ed7dcd4488ec35cdfbfdcbf, type: 3}
-  doorObject: {fileID: 2115783553}
 --- !u!1001 &50681033125807250
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2174,6 +2453,323 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 33334aa2f3ae8de4090cfa9e66ecc98a, type: 3}
+--- !u!1001 &546112424114390887
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 375137754995277029, guid: dbf37a80432665644a722c331247b56e,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 5753081380790501176}
+    - target: {fileID: 375137754995277029, guid: dbf37a80432665644a722c331247b56e,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnNumberButtonClick
+      objectReference: {fileID: 0}
+    - target: {fileID: 375137754995277029, guid: dbf37a80432665644a722c331247b56e,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: DoorLock2, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 733873066838957593, guid: dbf37a80432665644a722c331247b56e,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 5753081380790501176}
+    - target: {fileID: 733873066838957593, guid: dbf37a80432665644a722c331247b56e,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnNumberButtonClick
+      objectReference: {fileID: 0}
+    - target: {fileID: 733873066838957593, guid: dbf37a80432665644a722c331247b56e,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: DoorLock2, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1216593359621405216, guid: dbf37a80432665644a722c331247b56e,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1216593359621405216, guid: dbf37a80432665644a722c331247b56e,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 5753081380790501176}
+    - target: {fileID: 1216593359621405216, guid: dbf37a80432665644a722c331247b56e,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnClearButtonClick
+      objectReference: {fileID: 0}
+    - target: {fileID: 1216593359621405216, guid: dbf37a80432665644a722c331247b56e,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: DoorLock2, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1281383683116437516, guid: dbf37a80432665644a722c331247b56e,
+        type: 3}
+      propertyPath: doorController
+      value: 
+      objectReference: {fileID: 2115783557}
+    - target: {fileID: 1281383683116437516, guid: dbf37a80432665644a722c331247b56e,
+        type: 3}
+      propertyPath: interactableObject
+      value: 
+      objectReference: {fileID: 2115783555}
+    - target: {fileID: 1926621799021543714, guid: dbf37a80432665644a722c331247b56e,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1926621799021543714, guid: dbf37a80432665644a722c331247b56e,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 5753081380790501176}
+    - target: {fileID: 1926621799021543714, guid: dbf37a80432665644a722c331247b56e,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnCheckPassword
+      objectReference: {fileID: 0}
+    - target: {fileID: 1926621799021543714, guid: dbf37a80432665644a722c331247b56e,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: DoorLock2, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 2432880563861736309, guid: dbf37a80432665644a722c331247b56e,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 5753081380790501176}
+    - target: {fileID: 2432880563861736309, guid: dbf37a80432665644a722c331247b56e,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnNumberButtonClick
+      objectReference: {fileID: 0}
+    - target: {fileID: 2432880563861736309, guid: dbf37a80432665644a722c331247b56e,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: DoorLock2, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 4341350315575050508, guid: dbf37a80432665644a722c331247b56e,
+        type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 145138946}
+    - target: {fileID: 4672167794521718372, guid: dbf37a80432665644a722c331247b56e,
+        type: 3}
+      propertyPath: m_Name
+      value: Puzzle_DoorLock2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5082086859658812452, guid: dbf37a80432665644a722c331247b56e,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 5753081380790501176}
+    - target: {fileID: 5082086859658812452, guid: dbf37a80432665644a722c331247b56e,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnNumberButtonClick
+      objectReference: {fileID: 0}
+    - target: {fileID: 5082086859658812452, guid: dbf37a80432665644a722c331247b56e,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: DoorLock2, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 5177185102710153622, guid: dbf37a80432665644a722c331247b56e,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5177185102710153622, guid: dbf37a80432665644a722c331247b56e,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 5753081380790501176}
+    - target: {fileID: 5177185102710153622, guid: dbf37a80432665644a722c331247b56e,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnNumberButtonClick
+      objectReference: {fileID: 0}
+    - target: {fileID: 5177185102710153622, guid: dbf37a80432665644a722c331247b56e,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: DoorLock2, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 5177185102710153622, guid: dbf37a80432665644a722c331247b56e,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: N
+      objectReference: {fileID: 0}
+    - target: {fileID: 5676301968457899060, guid: dbf37a80432665644a722c331247b56e,
+        type: 3}
+      propertyPath: clip2
+      value: 
+      objectReference: {fileID: 8300000, guid: cf3833c298a14dc45a6cf95ebb718510, type: 3}
+    - target: {fileID: 5676301968457899060, guid: dbf37a80432665644a722c331247b56e,
+        type: 3}
+      propertyPath: doorObject
+      value: 
+      objectReference: {fileID: 990027481}
+    - target: {fileID: 5827144768471120475, guid: dbf37a80432665644a722c331247b56e,
+        type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 145138946}
+    - target: {fileID: 5859406208976641513, guid: dbf37a80432665644a722c331247b56e,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5859406208976641513, guid: dbf37a80432665644a722c331247b56e,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 5753081380790501176}
+    - target: {fileID: 5859406208976641513, guid: dbf37a80432665644a722c331247b56e,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnNumberButtonClick
+      objectReference: {fileID: 0}
+    - target: {fileID: 5859406208976641513, guid: dbf37a80432665644a722c331247b56e,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: DoorLock2, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 6274298654730507234, guid: dbf37a80432665644a722c331247b56e,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 5753081380790501176}
+    - target: {fileID: 6274298654730507234, guid: dbf37a80432665644a722c331247b56e,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnNumberButtonClick
+      objectReference: {fileID: 0}
+    - target: {fileID: 6274298654730507234, guid: dbf37a80432665644a722c331247b56e,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: DoorLock2, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 6347070144878301310, guid: dbf37a80432665644a722c331247b56e,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6347070144878301310, guid: dbf37a80432665644a722c331247b56e,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 5753081380790501176}
+    - target: {fileID: 6347070144878301310, guid: dbf37a80432665644a722c331247b56e,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnNumberButtonClick
+      objectReference: {fileID: 0}
+    - target: {fileID: 6347070144878301310, guid: dbf37a80432665644a722c331247b56e,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: DoorLock2, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 8413404368201997542, guid: dbf37a80432665644a722c331247b56e,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8413404368201997542, guid: dbf37a80432665644a722c331247b56e,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 5753081380790501176}
+    - target: {fileID: 8413404368201997542, guid: dbf37a80432665644a722c331247b56e,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnNumberButtonClick
+      objectReference: {fileID: 0}
+    - target: {fileID: 8413404368201997542, guid: dbf37a80432665644a722c331247b56e,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: DoorLock2, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 9024287479721982553, guid: dbf37a80432665644a722c331247b56e,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.66731626
+      objectReference: {fileID: 0}
+    - target: {fileID: 9024287479721982553, guid: dbf37a80432665644a722c331247b56e,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.29324436
+      objectReference: {fileID: 0}
+    - target: {fileID: 9024287479721982553, guid: dbf37a80432665644a722c331247b56e,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 7.5407753
+      objectReference: {fileID: 0}
+    - target: {fileID: 9024287479721982553, guid: dbf37a80432665644a722c331247b56e,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9024287479721982553, guid: dbf37a80432665644a722c331247b56e,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9024287479721982553, guid: dbf37a80432665644a722c331247b56e,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9024287479721982553, guid: dbf37a80432665644a722c331247b56e,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9024287479721982553, guid: dbf37a80432665644a722c331247b56e,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9024287479721982553, guid: dbf37a80432665644a722c331247b56e,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9024287479721982553, guid: dbf37a80432665644a722c331247b56e,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9197673957732517613, guid: dbf37a80432665644a722c331247b56e,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 5753081380790501176}
+    - target: {fileID: 9197673957732517613, guid: dbf37a80432665644a722c331247b56e,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnNumberButtonClick
+      objectReference: {fileID: 0}
+    - target: {fileID: 9197673957732517613, guid: dbf37a80432665644a722c331247b56e,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: DoorLock2, Assembly-CSharp
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 8413499349433554318, guid: dbf37a80432665644a722c331247b56e,
+        type: 3}
+      insertIndex: 2
+      addedObject: {fileID: 5753081380790501176}
+  m_SourcePrefab: {fileID: 100100000, guid: dbf37a80432665644a722c331247b56e, type: 3}
 --- !u!1001 &2230951310075219725
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2247,6 +2843,24 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bc53da43ce699ef408424d3e2eb1a82b, type: 3}
+--- !u!1 &3405146803688699892 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8413499349433554318, guid: dbf37a80432665644a722c331247b56e,
+    type: 3}
+  m_PrefabInstance: {fileID: 546112424114390887}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &3416258433665307438 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5586225549250743777, guid: dbf37a80432665644a722c331247b56e,
+    type: 3}
+  m_PrefabInstance: {fileID: 546112424114390887}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &4078120347645989993
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2255,6 +2869,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3772060494845929782, guid: 4c394abbf2e198b42950c3c04a6a2638,
+        type: 3}
+      propertyPath: m_TagString
+      value: InteractableObject
+      objectReference: {fileID: 0}
     - target: {fileID: 4070842793022083473, guid: 4c394abbf2e198b42950c3c04a6a2638,
         type: 3}
       propertyPath: m_IsTrigger
@@ -2347,7 +2966,7 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 4078120347130814591, guid: 4c394abbf2e198b42950c3c04a6a2638,
         type: 3}
       insertIndex: 1
-      addedObject: {fileID: 990058618}
+      addedObject: {fileID: 990184185}
     - targetCorrespondingSourceObject: {fileID: 8674222952309881203, guid: 4c394abbf2e198b42950c3c04a6a2638,
         type: 3}
       insertIndex: -1
@@ -2364,11 +2983,7 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 4079110453213583389, guid: 4c394abbf2e198b42950c3c04a6a2638,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: 2115783567}
-    - targetCorrespondingSourceObject: {fileID: 4079110453213583389, guid: 4c394abbf2e198b42950c3c04a6a2638,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 2115783565}
+      addedObject: {fileID: 2115783573}
     - targetCorrespondingSourceObject: {fileID: 4079791492396539385, guid: 4c394abbf2e198b42950c3c04a6a2638,
         type: 3}
       insertIndex: -1
@@ -2377,6 +2992,14 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 293035802}
+    - targetCorrespondingSourceObject: {fileID: 3772060494845929782, guid: 4c394abbf2e198b42950c3c04a6a2638,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 293024837}
+    - targetCorrespondingSourceObject: {fileID: 3772060494845929782, guid: 4c394abbf2e198b42950c3c04a6a2638,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 293024838}
   m_SourcePrefab: {fileID: 100100000, guid: 4c394abbf2e198b42950c3c04a6a2638, type: 3}
 --- !u!1001 &4288825744817021042
 PrefabInstance:
@@ -2467,12 +3090,8 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 3405146804759439715, guid: be1a4027809eb574b9ea4d7ddb81102d,
         type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 975801372}
-    - targetCorrespondingSourceObject: {fileID: 3405146804759439715, guid: be1a4027809eb574b9ea4d7ddb81102d,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 975801371}
+      insertIndex: 3
+      addedObject: {fileID: 975801377}
   m_SourcePrefab: {fileID: 100100000, guid: be1a4027809eb574b9ea4d7ddb81102d, type: 3}
 --- !u!1001 &5403786863233959657
 PrefabInstance:
@@ -2547,6 +3166,22 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c193a6f40b4af4740a31ba3d71ccfc35, type: 3}
+--- !u!114 &5753081380790501176
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3405146803688699892}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7298e762c77c96340a22c59c5f41f3d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  resultText: {fileID: 3416258433665307438}
+  doorController: {fileID: 2115783557}
+  interactableObject: {fileID: 1926178645}
+  irongrating: {fileID: 990027481}
 --- !u!1001 &6367387690624086283
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2620,6 +3255,12 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2593195c3078e8e4c98338bcd15b6f8f, type: 3}
+--- !u!1 &6984248454116728061 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4672167794521718372, guid: dbf37a80432665644a722c331247b56e,
+    type: 3}
+  m_PrefabInstance: {fileID: 546112424114390887}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &7733794976234337885 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6984248455193887338, guid: be1a4027809eb574b9ea4d7ddb81102d,
@@ -2866,6 +3507,7 @@ SceneRoots:
   - {fileID: 80922793}
   - {fileID: 362114517898453958}
   - {fileID: 4288825744817021042}
+  - {fileID: 546112424114390887}
   - {fileID: 145138945}
   - {fileID: 2063307921}
   - {fileID: 1054720655}
