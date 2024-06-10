@@ -967,7 +967,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b0eb59d6ffeed04da042812c7169a5b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interactionUI: {fileID: 2063307920}
   interactPuzzleUI: {fileID: 485546838}
 --- !u!65 &293024838
 BoxCollider:
@@ -4386,7 +4385,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b0eb59d6ffeed04da042812c7169a5b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interactionUI: {fileID: 2063307920}
   interactPuzzleUI: {fileID: 1860065966}
 --- !u!65 &1768823772
 BoxCollider:
@@ -5890,7 +5888,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b0eb59d6ffeed04da042812c7169a5b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interactionUI: {fileID: 2063307920}
   interactPuzzleUI: {fileID: 6984248454116728061}
 --- !u!65 &1926178649
 BoxCollider:
@@ -6405,7 +6402,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b0eb59d6ffeed04da042812c7169a5b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interactionUI: {fileID: 2063307920}
   interactPuzzleUI: {fileID: 7733794976234337885}
 --- !u!4 &2115783556 stripped
 Transform:
@@ -8415,7 +8411,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   resultText: {fileID: 3416258433665307438}
-  doorController: {fileID: 2115783557}
   interactableObject: {fileID: 1926178645}
   irongrating: {fileID: 990027481}
 --- !u!1 &5766968773681400746
