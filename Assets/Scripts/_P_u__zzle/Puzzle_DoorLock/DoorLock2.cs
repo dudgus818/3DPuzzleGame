@@ -8,6 +8,8 @@ public class DoorLock2 : MonoBehaviour
     private string correctPassword = "CANIS"; // 설정된 테스트 비밀번호
     public InteractableObject interactableObject;
     public GameObject irongrating;
+    public GameObject running;
+    public GameObject horror;
 
     private PlayerController playerController;
 
@@ -72,7 +74,17 @@ public class DoorLock2 : MonoBehaviour
                 Debug.Log("MetalOpenDoor");
                 openDoorSound.MetalOpenDoor();
             }
-            Invoke("DisablePuzzleUI", 0.5f);
+            if (horror != null)
+            {
+                Destroy(horror);
+            }
+            if (running != null)
+            {
+                running.SetActive(true);
+                Invoke("DestroyRunning", 1.5f);
+            }
+
+            Invoke("DisablePuzzleUI", 0.01f);
 
         }
         else
