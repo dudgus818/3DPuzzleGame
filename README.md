@@ -37,3 +37,10 @@
 
 - F키를 눌러 상호 작용을 하며 주변 사물로부터 힌트를 얻으세요.
 - 주변 사물로부터 힌트를 얻고 그걸 기반으로 문제를 풀어 나가시면 됩니다.
+
+
+
+
+
+##UML
+![image](https://github.com/dudgus818/3DPuzzleGame/assets/114510370/14d6ff2a-7d11-4a5c-aff8-2bb51bdece87)
