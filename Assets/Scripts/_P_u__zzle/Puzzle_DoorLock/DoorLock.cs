@@ -6,7 +6,7 @@ public class DoorLock : MonoBehaviour
 {
     public TMP_Text resultText;  // 결과를 표시할 텍스트 필드
     private string input = "";  // 사용자 입력을 저장할 문자열
-    private string correctPassword = "1234"; // 설정된 테스트 비밀번호
+    public string correctPassword = "1234"; // 설정된 테스트 비밀번호
     public DoorController doorController;
     public InteractableObject interactableObject;
 
@@ -55,6 +55,7 @@ public class DoorLock : MonoBehaviour
             resultText.text = "Access";
             doorController.isOpen = true;
             GameManager.instance.ToggleCursor();
+            Invoke("DisablePuzzleUI", 0.5f);
 
             AudioManager audioManager = FindAnyObjectByType<AudioManager>();
             if (audioManager != null)
@@ -80,6 +81,17 @@ public class DoorLock : MonoBehaviour
                 audioManager.ErrorSound();
             }
 
+        }
+    }
+    void DisablePuzzleUI()
+    {
+        if (gameObject.activeSelf)
+        {
+            gameObject.SetActive(false);
+        }
+        else
+        {
+            Debug.Log("비활성화 유지.");
         }
     }
 }
